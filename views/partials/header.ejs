@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>YelpCamp</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- <link rel = "stylesheet" href="public/stylesheets/main.css"> -->
+		<style>
+			/* body{
+				background:lightblue;
+			} */
+			body {
+			  background:url(https://images.unsplash.com/photo-1559666126-84f389727b9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60););
+			  animation: chbg 15s infinite alternate;
+			  background-size:cover
+			}
+			@keyframes chbg {
+			  0% {
+				background:url(https://images.unsplash.com/photo-1569191086551-b3606745884f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+			  background-size:cover
+			  }
+			  20% {
+				background:url(https://images.unsplash.com/photo-1569402604464-6f466a53141e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+			  background-size:cover
+			  }
+			  40% {
+				background:url(https://images.unsplash.com/photo-1569252376476-f252109a526d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+			  background-size:cover
+			  }
+			  60% {
+				background:url(https://images.unsplash.com/photo-1569173784625-34f37a1a35ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+			  background-size:cover
+			  }
+			  80% {
+				background:url(https://images.unsplash.com/photo-1568473648251-3a0c3aa56192?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+			  background-size:cover
+			  }
+			  100% {
+				background:url(https://images.unsplash.com/photo-1512229146678-994d3f1e31bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+			  background-size:cover
+			  }
+			}
+			
+			.thumbnail img{
+				width:100%;
+			}
+
+			.thumbnai{
+				padding:0;
+			}
+
+			.thumbnail .caption-full{
+				padding:9px;
+			}
+			
+			#delete-form{
+				display:inline;
+			}
+		</style>
+	</head>
+	<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">YelpCamp</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<% if(!currentuser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Sign Up</a></li>
+					<% }else{ %>
+						<li><a href="#">Signed In As <%= currentuser.username %></a></li>
+						<li><a href="/logout">Logout</a></li>
+					<% } %>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container">
+		<% if(error && error.length > 0){ %>
+			<div class="alert alert-danger" role="alert">
+				<%=error %>	
+			</div>
+		<% } %>
+		<% if(success && success.length > 0){ %>
+			<div class="alert alert-success" role="alert">
+				<%= success %>	
+			</div>
+		<% } %>
+	</div>
+		
+		
